@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@sidebase/nuxt-auth": "^0.5.0-rc.0",
     "@sidebase/nuxt-session": "^0.2.7",
     "autoprefixer": "^10.4.14",

@@ -1,0 +1,1 @@
+import{u as n}from"./fetch.591a2b80.js";import{j as o,c as r,t as c,h as p,o as u,n as _}from"./entry.82b23e14.js";const f={__name:"token",async setup(l){let e,t;const s=_(),{data:a}=([e,t]=o(()=>n("/api/token",{headers:s},"$uHtx0Gb6vl")),e=await e,t(),e);return(i,m)=>(u(),r("pre",null,c(p(a)||"no token present, are you logged in?"),1))}};export{f as default};

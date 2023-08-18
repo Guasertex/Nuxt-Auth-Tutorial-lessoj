@@ -36,13 +36,13 @@ export default NuxtAuthHandler({
   providers: [
     // @ts-expect-error You need to use .default here for it to work during SSR. May be fixed via Vite at some point
     GithubProvider.default({
-      clientId: runtimeConfig.public.GITHUB_CLIENT_ID,
-      clientSecret: runtimeConfig.GITHUB_CLIENT_SECRET,
+      clientId: runtimeConfig.public.PROVIDER_GITHUB_CLIENT_ID,
+      clientSecret: runtimeConfig.PROVIDER_GITHUB_CLIENT_SECRET,
     }),
     // @ts-expect-error You need to use .default here for it to work during SSR. May be fixed via Vite at some point
     TwitchProvider.default({
-      clientId: runtimeConfig.public.TWITCH_CLIENT_ID,
-      clientSecret: runtimeConfig.TWITCH_CLIENT_SECRET,
+      clientId: runtimeConfig.public.PROVIDER_TWITCH_CLIENT_ID,
+      clientSecret: runtimeConfig.PROVIDER_TWITCH_CLIENT_SECRET,
     }),
   ],
 })

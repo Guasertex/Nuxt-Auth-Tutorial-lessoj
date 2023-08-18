@@ -37,6 +37,6 @@ jobs:
         run: npm run build 
       
       - name: Deploy 🚀
-        uses: borales/actions-yarn@v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist

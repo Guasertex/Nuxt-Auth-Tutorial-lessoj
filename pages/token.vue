@@ -1,7 +1,9 @@
-<script setup lang="ts">
+<script setup>
 definePageMeta({ auth: false })
 
-const headers = useRequestHeaders(['cookie']) as HeadersInit
+// const headers = useRequestHeaders(['cookie']) as HeadersInit
+// const { data: token } = await useFetch('/api/token', { headers })
+const headers = useRequestHeaders(['cookie'])
 const { data: token } = await useFetch('/api/token', { headers })
 </script>
 

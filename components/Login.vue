@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const { data: providers } = await useFetch('/api/auth/providers')
 </script>
 

@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@nuxt/types": "^2.17.1",
     "@nuxtjs/dotenv": "^1.4.1",
     "@sidebase/nuxt-auth": "^0.5.0-rc.0",
     "@sidebase/nuxt-session": "^0.2.7",
@@ -21,7 +22,9 @@
     "nuxt": "^3.3.2",
     "postcss": "^8.4.21",
     "prisma": "^4.12.0",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.1.6",
+    "vue-tsc": "^1.8.8"
   },
   "peerDependencies": {
     "next-auth": "^4.21.1"

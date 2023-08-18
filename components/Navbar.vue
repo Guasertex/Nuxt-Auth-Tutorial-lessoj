@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const { signOut, status } = useAuth()
 
 const loggedIn = computed(() => status.value === 'authenticated')

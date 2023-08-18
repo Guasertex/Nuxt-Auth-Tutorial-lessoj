@@ -34,9 +34,7 @@ jobs:
           run: npm run generate      
       
       - name: Build production bundle
-        uses: borales/actions-yarn@v4 
-        with: 
-          cmd: npm run build 
+        run: npm run build 
       
       - name: Deploy 🚀
         uses: borales/actions-yarn@v4

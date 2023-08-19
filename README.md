@@ -21,3 +21,7 @@ if project has error and ipeer-deps dont installing  or updated. errore epxaml: 
 - yarn postinstall
 
 - yarn dev
+
+Make Api_Secret
+
+- node -e "console.log(crypto.randomBytes(32).toString('hex'))"

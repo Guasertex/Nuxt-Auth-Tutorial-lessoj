@@ -29,7 +29,8 @@ jobs:
           PROVIDER_GITHUB_CLIENT_SECRET: ${{ vars.PROVIDER_GITHUB_CLIENT_SECRET }}
           PROVIDER_TWITCH_CLIENT_ID: ${{ vars.PROVIDER_TWITCH_CLIENT_ID }}
           PROVIDER_TWITCH_CLIENT_SECRET: ${{ vars.PROVIDER_TWITCH_CLIENT_SECRET }}
-          API_CLIENT_SECRET: ${{ vars.API_CLIENT_SECRET }}
+          API_ROUTE_SECRET: ${{ vars.API_ROUTE_SECRET }}
+          SITE_GH_ORIGIN: ${{ vars.SITE_GH_ORIGIN }}
           DATABASE_URL: ${{ vars.DATABASE_URL }}
           run: npm run generate      
       

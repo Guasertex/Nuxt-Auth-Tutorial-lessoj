@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   modules: ['@sidebase/nuxt-auth', '@sidebase/nuxt-session'],
   auth: {
     enableGlobalAppMiddleware: true,
+    origin: `${process.env.SITE_GH_ORIGIN}`,
   },
   runtimeConfig: {
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,

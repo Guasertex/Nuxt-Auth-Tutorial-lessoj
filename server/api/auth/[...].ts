@@ -21,6 +21,7 @@ async function getMe(session: any) {
 }
 
 export default NuxtAuthHandler({
+  secret: `${runtimeConfig.API_ROUTE_SECRET}`,
   pages: {
     // Change the default behavior to use `/login` as the path for the sign-in page
     signIn: '/login',

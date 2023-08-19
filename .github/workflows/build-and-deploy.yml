@@ -37,7 +37,7 @@ jobs:
       - name: Build production bundle
         run: npm run build 
       
-      - name: Deploy 🚀
+      - name: Deploy 
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: .output

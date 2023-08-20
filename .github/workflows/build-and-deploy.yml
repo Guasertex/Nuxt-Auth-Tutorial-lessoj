@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Install & Generate 🔧
-        run: npm i
+        run: yarn install
         env:
           NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL  }}
           PROVIDER_GITHUB_CLIENT_ID: ${{ vars.PROVIDER_GITHUB_CLIENT_ID }}
@@ -32,12 +32,9 @@ jobs:
           API_ROUTE_SECRET: ${{ vars.API_ROUTE_SECRET }}
           SITE_GH_ORIGIN: ${{ vars.SITE_GH_ORIGIN }}
           DATABASE_URL: ${{ vars.DATABASE_URL }}
-          run: npm run generate      
-      
-      - name: Build production bundle
-        run: npm run build 
+          run: yarn generate      
       
       - name: Deploy 
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .output
+          folder: dist

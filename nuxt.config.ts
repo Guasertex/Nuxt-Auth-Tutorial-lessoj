@@ -20,4 +20,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  app: {
+    baseURL: '/nuxt-app/', // baseURL: '/<repository>/'
+    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+  },
 })

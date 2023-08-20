@@ -20,16 +20,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      
-      - name: Install & Generate 🔧
-        run: yarn install
+       
+      - name: Install Yarn
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: yarn install
         env:
-          NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL  }}
-          PROVIDER_GITHUB_CLIENT_ID: ${{ vars.PROVIDER_GITHUB_CLIENT_ID }}
-          PROVIDER_GITHUB_CLIENT_SECRET: ${{ vars.PROVIDER_GITHUB_CLIENT_SECRET }}
-          PROVIDER_TWITCH_CLIENT_ID: ${{ vars.PROVIDER_TWITCH_CLIENT_ID }}
-          PROVIDER_TWITCH_CLIENT_SECRET: ${{ vars.PROVIDER_TWITCH_CLIENT_SECRET }}
-          API_ROUTE_SECRET: ${{ vars.API_ROUTE_SECRET }}
-          SITE_GH_ORIGIN: ${{ vars.SITE_GH_ORIGIN }}
+          NUXT_APP_BASE_URL: ${{ secrets.NUXT_APP_BASE_URL  }}
+          PROVIDER_GITHUB_CLIENT_ID: ${{ secrets.PROVIDER_GITHUB_CLIENT_ID }}
+          PROVIDER_GITHUB_CLIENT_SECRET: ${{ secrets.PROVIDER_GITHUB_CLIENT_SECRET }}
+          PROVIDER_TWITCH_CLIENT_ID: ${{ secrets.PROVIDER_TWITCH_CLIENT_ID }}
+          PROVIDER_TWITCH_CLIENT_SECRET: ${{ secrets.PROVIDER_TWITCH_CLIENT_SECRET }}
+          API_ROUTE_SECRET: ${{ secrets.API_ROUTE_SECRET }}
+          SITE_GH_ORIGIN: ${{ secrets.SITE_GH_ORIGIN }}
           DATABASE_URL: ${{ vars.DATABASE_URL }}
-          run: yarn generate      
+        
+      - name: Yanr postinstall
+        uses: borales/actions-yarn@v4
+        with:
+           cmd: yarn postinstall
+      
+      - name: Build production bundle
+        run: yarn build 
+      
+      - name: Deploy 
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist

@@ -16,15 +16,18 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Setup yarn
+        run: npm install -g yarn
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: yarn
 
+        
       - name: Install Yarn
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: yarn
+        run: yarn
         env:
           NUXT_APP_BASE_URL: ${{ secrets.NUXT_APP_BASE_URL  }}
           PROVIDER_GITHUB_CLIENT_ID: ${{ secrets.PROVIDER_GITHUB_CLIENT_ID }}
@@ -35,13 +38,11 @@ jobs:
           SITE_GH_ORIGIN: ${{ secrets.SITE_GH_ORIGIN }}
           DATABASE_URL: ${{ vars.DATABASE_URL }}
         
-      - name: Yanr postinstall
-        uses: borales/actions-yarn@v4
-        with:
-           cmd: yarn postinstall
+      - name: Yarn postinstall
+        run: yarn postinstall
       
       - name: Build production bundle
-        run: yarn build 
+        run: yarn generate 
       
       - name: Deploy 
         uses: JamesIves/github-pages-deploy-action@v4

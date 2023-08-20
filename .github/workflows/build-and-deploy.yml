@@ -33,8 +33,3 @@ jobs:
           SITE_GH_ORIGIN: ${{ vars.SITE_GH_ORIGIN }}
           DATABASE_URL: ${{ vars.DATABASE_URL }}
           run: yarn generate      
-      
-      - name: Deploy 
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist

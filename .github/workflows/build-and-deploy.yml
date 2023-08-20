@@ -20,11 +20,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-       
+
       - name: Install Yarn
         uses: borales/actions-yarn@v4
         with:
-          cmd: yarn install
+          cmd: yarn
         env:
           NUXT_APP_BASE_URL: ${{ secrets.NUXT_APP_BASE_URL  }}
           PROVIDER_GITHUB_CLIENT_ID: ${{ secrets.PROVIDER_GITHUB_CLIENT_ID }}
